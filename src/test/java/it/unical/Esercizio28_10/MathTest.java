@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -27,8 +28,12 @@ public class MathTest {
 	
 	@Test
 	public void isPrimeWorks() {
-		assertFalse(math.primo(9));
-		assertTrue(math.primo(2));
+		assertFalse(math.isPrime(9));
+		assertFalse(math.isPrime(1));
+		assertTrue(math.isPrime(2));
+		List<Integer> numbers = Arrays.asList(2, 3, 5);
+	    for(Integer i : numbers)
+	      assertTrue(math.isPrime(i));
 	}
 	
 }

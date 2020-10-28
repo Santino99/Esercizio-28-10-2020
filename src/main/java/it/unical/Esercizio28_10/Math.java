@@ -11,18 +11,20 @@ public class Math {
 		if(n>=2)
 			primeNumbers.add(2);
 		for(int i=3; i<=n; i+=2) {
-			if(primo(i))
+			if(isPrime(i))
 				primeNumbers.add(i);
 		}
 		return primeNumbers;
 	}
 
-	public boolean primo(int num) {
-		int lim = num/2;
-		boolean isPrimo = true;
-		for(int div = 2; div <= lim && isPrimo; div++)
-			if (num % div == 0)
-				isPrimo = false;
-		return isPrimo;
-	}
+	public boolean isPrime(int number) {
+	    if(number < 2)
+	      return false;
+	    
+	    for(int i=2;i<=number;i++) {
+	      if(number % i == 0 && i != number)
+	        return false;
+	    }
+	    return true;
+	  }
 }
